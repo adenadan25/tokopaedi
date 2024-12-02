@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search products..." oninput="filterProducts()">
+        </div>
+    </header>
+    <main>
+        <section id="shop">
+            <h2>Available Products</h2>
+            <div class="categories">
+                <button onclick="filterByCategory('all')">All</button>
+                <button onclick="filterByCategory('electronics')">Electronics</button>
+                <button onclick="filterByCategory('fashion')">Fashion</button>
+                <button onclick="filterByCategory('home')">Home</button>
+            </div>
+            <div class="product-list" id="product-list">
+                <div class="product" data-category="electronics">
+                    <h3>Smartphone</h3>
+                    <p>High-quality smartphone with amazing features.</p>
+                    <button onclick="addToCart('Smartphone')">Add to Cart</button>
+                </div>
+                <div class="product" data-category="fashion">
+                    <h3>Designer T-Shirt</h3>
+                    <p>Stylish and comfortable t-shirt.</p>
+                    <button onclick="addToCart('Designer T-Shirt')">Add to Cart</button>
+                </div>
+                <div class="product" data-category="home">
+                    <h3>Blender</h3>
+                    <p>Perfect for making smoothies and shakes.</p>
+                    <button onclick="addToCart('Blender')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
